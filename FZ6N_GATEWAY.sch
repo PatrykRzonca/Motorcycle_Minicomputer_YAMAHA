@@ -1,0 +1,233 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 6
+Title "FZ6N_GATEWAY"
+Date "2021-05-28"
+Rev "A0"
+Comp "Quasi Peak"
+Comment1 "PRZ"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 3500 1000 0    276  ~ 55
+FZ6N GATEWAY PROJECT
+Wire Notes Line width 16 style solid rgb(0, 72, 72)
+	500  1050 11200 1050
+$Sheet
+S 5000 2250 1000 1500
+U 60ABCC10
+F0 "LMR36503" 50
+F1 "BUCK CONVERTER.sch" 50
+F2 "PGOOD" O R 6000 2800 50 
+$EndSheet
+$Sheet
+S 7000 2250 1000 1500
+U 60B3EE27
+F0 "Mictrocontroller Unit" 50
+F1 "MCU.sch" 50
+F2 "VOUT" I L 7000 2900 50 
+F3 "PGOOD" I L 7000 2800 50 
+F4 "ISO_TX" I L 7000 3000 50 
+F5 "ISO_RX" O L 7000 3100 50 
+F6 "ISO_CEN" O L 7000 3200 50 
+F7 "VBAT_ADC" I L 7000 3300 50 
+$EndSheet
+Wire Wire Line
+	7000 2800 6000 2800
+Wire Wire Line
+	6000 2900 6250 2900
+$Comp
+L Mechanical:MountingHole_Pad H101
+U 1 1 60C38A52
+P 9775 1700
+F 0 "H101" H 9950 1750 50  0000 C CNN
+F 1 "MountingHole_Pad" H 10225 1675 50  0001 C CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2_Pad_Via" H 9775 1700 50  0001 C CNN
+F 3 "~" H 9775 1700 50  0001 C CNN
+	1    9775 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 60C38E72
+P 9775 1850
+F 0 "#PWR0103" H 9775 1600 50  0001 C CNN
+F 1 "GND" H 9800 1625 50  0000 C CNN
+F 2 "" H 9775 1850 50  0001 C CNN
+F 3 "" H 9775 1850 50  0001 C CNN
+	1    9775 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9775 1850 9775 1800
+$Comp
+L Mechanical:MountingHole_Pad H102
+U 1 1 60C396A0
+P 9950 1950
+F 0 "H102" H 10125 2000 50  0000 C CNN
+F 1 "MountingHole_Pad" H 10400 1925 50  0001 C CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2_Pad_Via" H 9950 1950 50  0001 C CNN
+F 3 "~" H 9950 1950 50  0001 C CNN
+	1    9950 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 60C396A6
+P 9950 2100
+F 0 "#PWR0104" H 9950 1850 50  0001 C CNN
+F 1 "GND" H 9975 1875 50  0000 C CNN
+F 2 "" H 9950 2100 50  0001 C CNN
+F 3 "" H 9950 2100 50  0001 C CNN
+	1    9950 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9950 2100 9950 2050
+$Comp
+L Mechanical:MountingHole_Pad H103
+U 1 1 60C3A35B
+P 10300 1700
+F 0 "H103" H 10475 1750 50  0000 C CNN
+F 1 "MountingHole_Pad" H 10750 1675 50  0001 C CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2_Pad_Via" H 10300 1700 50  0001 C CNN
+F 3 "~" H 10300 1700 50  0001 C CNN
+	1    10300 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 60C3A361
+P 10300 1850
+F 0 "#PWR0105" H 10300 1600 50  0001 C CNN
+F 1 "GND" H 10325 1625 50  0000 C CNN
+F 2 "" H 10300 1850 50  0001 C CNN
+F 3 "" H 10300 1850 50  0001 C CNN
+	1    10300 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10300 1850 10300 1800
+$Comp
+L Mechanical:MountingHole_Pad H104
+U 1 1 60C3A368
+P 10475 1950
+F 0 "H104" H 10650 2000 50  0000 C CNN
+F 1 "MountingHole_Pad" H 10925 1925 50  0001 C CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2_Pad_Via" H 10475 1950 50  0001 C CNN
+F 3 "~" H 10475 1950 50  0001 C CNN
+	1    10475 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 60C3A36E
+P 10475 2100
+F 0 "#PWR0106" H 10475 1850 50  0001 C CNN
+F 1 "GND" H 10500 1875 50  0000 C CNN
+F 2 "" H 10475 2100 50  0001 C CNN
+F 3 "" H 10475 2100 50  0001 C CNN
+	1    10475 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10475 2100 10475 2050
+Text Notes 9700 1325 0    79   ~ 0
+Mounting holes
+Wire Notes Line
+	9500 1100 11175 1100
+Wire Notes Line
+	11175 1100 11175 2425
+Wire Notes Line
+	11175 2425 9500 2425
+Wire Notes Line
+	9500 2425 9500 1100
+$Sheet
+S 2950 2250 1000 1500
+U 60C6954B
+F0 "POWER/FUSE/MEASURE" 50
+F1 "Power Input.sch" 50
+F2 "VBAT_ADC" O R 3950 3150 50 
+F3 "ISO_KLINE" B R 3950 3000 50 
+$EndSheet
+$Comp
+L Mechanical:Housing N?
+U 1 1 60BD9201
+P 10675 6150
+AR Path="/60ABCC10/60BD9201" Ref="N?"  Part="1" 
+AR Path="/60BD9201" Ref="N101"  Part="1" 
+F 0 "N101" H 10875 6200 50  0000 L CNN
+F 1 "Housing" H 10875 6100 50  0000 L CNN
+F 2 "Symbol:OSHW-Logo2_7.3x6mm_SilkScreen" H 10725 6200 50  0001 C CNN
+F 3 "~" H 10725 6200 50  0001 C CNN
+	1    10675 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 4400 6550 4400
+Wire Wire Line
+	6550 4400 6550 3200
+Wire Wire Line
+	6550 3200 7000 3200
+Wire Wire Line
+	6450 4300 6450 3100
+Wire Wire Line
+	6000 4300 6450 4300
+Wire Wire Line
+	6450 3100 7000 3100
+Wire Wire Line
+	7000 3000 6350 3000
+Wire Wire Line
+	6350 3000 6350 4200
+Wire Wire Line
+	6000 4200 6350 4200
+Wire Wire Line
+	6000 4100 6250 4100
+Wire Wire Line
+	6250 4100 6250 2900
+Connection ~ 6250 2900
+Wire Wire Line
+	6250 2900 7000 2900
+Wire Wire Line
+	3950 3000 4400 3000
+Wire Wire Line
+	4400 3000 4400 4250
+Wire Wire Line
+	4400 4250 5000 4250
+$Sheet
+S 5000 4000 1000 1500
+U 60C0DB51
+F0 "MC33660" 50
+F1 "K_LINE TRANSCIEVER.sch" 50
+F2 "ISO_KLINE" B L 5000 4250 50 
+F3 "ISO_TX" O R 6000 4200 50 
+F4 "ISO_RX" I R 6000 4300 50 
+F5 "ISO_CEN" I R 6000 4400 50 
+F6 "VDD_BUCK" I R 6000 4100 50 
+$EndSheet
+Wire Wire Line
+	3950 3150 4250 3150
+Wire Wire Line
+	4250 3150 4250 5750
+Wire Wire Line
+	4250 5750 6650 5750
+Wire Wire Line
+	6650 5750 6650 3300
+Wire Wire Line
+	6650 3300 7000 3300
+Text Notes 7125 1475 0    79   ~ 0
+Rename sheets\nClean housing and mountig holes
+$Sheet
+S 7000 4000 1000 1500
+U 60FB0ECC
+F0 "External_Button" 39
+F1 "Buttons.sch" 39
+F2 "IC_BUTTON_1" O R 8000 4100 50 
+F3 "IC_BUTTON_2" O R 8000 4200 50 
+F4 "IC_BUTTON_3" O R 8000 4300 50 
+$EndSheet
+$EndSCHEMATC

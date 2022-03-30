@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP nRF52810
+D High performance solutions for Bluetooth 5/Bluetooth mesh/Thread/Zigbee
+K SoC, Microcontroler
+F https://infocenter.nordicsemi.com/pdf/nRF52810_PS_v1.3.pdf
+$ENDCMP
+#
+#End Doc Library

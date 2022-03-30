@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name FZ6N_GATEWAY)(type Legacy)(uri ${KIPRJMOD}/FZ6N_GATEWAY.lib)(options "")(descr ""))
+  (lib (name FZ6N_GATEWAY-rescue)(type Legacy)(uri ${KIPRJMOD}/FZ6N_GATEWAY-rescue.lib)(options "")(descr ""))
+)

@@ -1,0 +1,39 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP EVQ-9P701P
+D Tactile Switches SMD 3.5X2.9MM SID-OP L SHAPED TERM 1.6N
+K Switch, Tactile, Microswitch
+F https://pl.mouser.com/datasheet/2/315/sw_lt_eng_3529s_side-1289027.pdf
+$ENDCMP
+#
+$CMP L9637
+D I/O Controller Interface IC ISO 9141 Interface
+K K-Line, ISO 9141, Automotive Bus
+F https://pl.mouser.com/datasheet/2/389/cd00000234-1795339.pdf
+$ENDCMP
+#
+$CMP LMR36503
+D LMR36503 3-V to 65-V, 0.3-A Ultra-Small Synchronous Buck Converterwith Ultra-Low IQ
+K DC/DC, BUCK
+F https://www.ti.com/lit/ds/symlink/lmr36503.pdf?ts=1621506556935&ref_url=https%253A%252F%252Fwww.ti.com%252Fstore%252Fti%252Fen%252Fp%252Fproduct%252F%253Fp%253DLMR36503RFRPER
+$ENDCMP
+#
+$CMP MC33660
+D The 33660 is a serial link bus interface device designed to provide bi-directional half-duplex communication interfacing in automotive diagnostic applications.
+K ISO9141 PHYSICAL INTERFACE
+F https://pl.mouser.com/datasheet/2/302/MC33660-1126837.pdf
+$ENDCMP
+#
+$CMP MP4410
+D MP4410 36V, 100mA Synchronous  Step-Down Converter
+K DC/DC, BUCK
+F https://www.mouser.com/datasheet/2/277/MP4410-1384341.pdf
+$ENDCMP
+#
+$CMP STM32L031K6U3TR
+D ARM Microcontrollers - MCU 16/32-BITS MICROS
+K Microcontroller, ARM, STM32
+F https://pl.mouser.com/datasheet/2/389/dm00140359-1798360.pdf
+$ENDCMP
+#
+#End Doc Library

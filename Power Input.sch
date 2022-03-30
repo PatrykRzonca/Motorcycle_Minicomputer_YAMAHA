@@ -1,0 +1,421 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 6
+Title "FZ6N_GATEWAY"
+Date "2021-05-28"
+Rev "A0"
+Comp "Quasi Peak"
+Comment1 "PRZ"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 2450 900  0    157  ~ 31
+POWER INPUT, FUSE, VOLTAGE MASUREMENT, CONNECTOR
+Wire Notes Line width 16 style solid rgb(0, 72, 0)
+	475  1000 11225 1000
+Wire Wire Line
+	4625 3250 4625 3300
+Wire Wire Line
+	4625 3300 4525 3300
+Wire Wire Line
+	4525 3500 4625 3500
+Wire Wire Line
+	4625 3500 4625 3600
+Text Label 4525 3300 0    20   ~ 0
++12V
+Wire Wire Line
+	4525 3400 4750 3400
+Text Notes 4375 2700 0    79   ~ 0
+Input connector
+Wire Wire Line
+	4625 3300 4875 3300
+Connection ~ 4625 3300
+Text Notes 7000 2075 0    79   ~ 0
+Add testpoints on ground\nAdd 100nF capacitor on K_LINE line\n\n
+Text Notes 7000 1650 0    157  ~ 31
+TODO List
+Wire Wire Line
+	6300 3300 6250 3300
+Wire Wire Line
+	5950 3300 5900 3300
+Wire Wire Line
+	5900 3300 5900 3400
+Wire Wire Line
+	5900 3600 5900 3700
+Wire Wire Line
+	5900 3300 5850 3300
+Connection ~ 5900 3300
+Wire Wire Line
+	5450 4950 5450 4900
+Wire Wire Line
+	5450 4600 5450 4550
+Wire Wire Line
+	5450 4200 5450 3300
+Connection ~ 5450 3300
+Wire Wire Line
+	5450 3300 5550 3300
+Text Notes 5225 3300 0    39   ~ 0
+12V to 18V
+Wire Wire Line
+	5250 3700 5250 3650
+Wire Wire Line
+	5250 3300 5250 3350
+Connection ~ 5250 3300
+Wire Wire Line
+	5250 3300 5450 3300
+Wire Wire Line
+	5450 4550 5800 4550
+Connection ~ 5450 4550
+Wire Wire Line
+	5450 4550 5450 4500
+Wire Wire Line
+	5800 4550 6000 4550
+Text HLabel 6000 4550 2    50   Output ~ 0
+VBAT_ADC
+Text Notes 5550 4500 0    20   ~ 0
+Max voltage on VBAT is 24V
+Text Notes 5700 4275 0    39   ~ 0
+Max voltage on the input\nof ADC converter when VBAT\nequal 18V will be 3.26V
+Wire Notes Line
+	5675 4025 6575 4025
+Wire Notes Line
+	6575 4025 6575 4325
+Wire Notes Line
+	6575 4325 5675 4325
+Wire Notes Line
+	5675 4325 5675 4025
+Wire Wire Line
+	6600 3300 6625 3300
+Text Notes 6725 2975 0    39   ~ 0
+Power signal\nto the K-Line controler,\n12V nominal
+Wire Notes Line
+	6700 2750 7500 2750
+Wire Notes Line
+	7500 2750 7500 3000
+Wire Notes Line
+	7500 3000 6700 3000
+Wire Notes Line
+	6700 3000 6700 2750
+Text HLabel 4825 3925 2    50   BiDi ~ 0
+ISO_KLINE
+Wire Wire Line
+	4825 3925 4750 3925
+Wire Wire Line
+	4750 3925 4750 3400
+Text Label 4525 3400 0    20   ~ 0
+ISO_KLINE
+Text Label 4525 3500 0    20   ~ 0
+GND
+Wire Wire Line
+	5800 4900 5800 4950
+Wire Wire Line
+	5800 4600 5800 4550
+Connection ~ 5800 4550
+Wire Wire Line
+	4875 3250 4875 3300
+Connection ~ 4875 3300
+Wire Wire Line
+	4875 3300 5250 3300
+Wire Wire Line
+	6625 3250 6625 3300
+Connection ~ 6625 3300
+Text Notes 6600 2700 0    79   ~ 0
+Output main power section
+$Comp
+L Connector:Conn_01x03_Male J401
+U 1 1 60C6B6B5
+P 4325 3400
+F 0 "J401" H 4375 3600 28  0000 C CNN
+F 1 "Conn_01x03_Male" H 4450 3600 28  0001 C CNN
+F 2 "" H 4325 3400 28  0001 C CNN
+F 3 "~" H 4325 3400 28  0001 C CNN
+F 4 "TE Connectivity / AMP" H 4475 3825 28  0001 C CNN "Manufacturer"
+F 5 "None" H 4475 3725 28  0001 C CNN "Package"
+F 6 "2-1445055-3" H 4475 3625 28  0001 C CNN "Part Number"
+	1    4325 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR0401
+U 1 1 60C6D8E6
+P 4625 3250
+F 0 "#PWR0401" H 4625 3100 50  0001 C CNN
+F 1 "+12V" H 4700 3350 28  0000 C CNN
+F 2 "" H 4625 3250 50  0001 C CNN
+F 3 "" H 4625 3250 50  0001 C CNN
+	1    4625 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0402
+U 1 1 60C6DBDB
+P 4625 3600
+F 0 "#PWR0402" H 4625 3350 50  0001 C CNN
+F 1 "GND" H 4700 3500 28  0000 C CNN
+F 2 "" H 4625 3600 50  0001 C CNN
+F 3 "" H 4625 3600 50  0001 C CNN
+	1    4625 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Fuse F401
+U 1 1 60C907FA
+P 5700 3300
+F 0 "F401" V 5625 3300 31  0000 C CNN
+F 1 "Fuse" V 5775 3300 31  0001 C CNN
+F 2 "" V 5630 3300 31  0001 C CNN
+F 3 "~" H 5700 3300 31  0001 C CNN
+F 4 "Bel Fuse" V 5350 3325 31  0001 C CNN "Manufacturer"
+F 5 "1206" V 5450 3325 31  0001 C CNN "Package"
+F 6 "C1Q 375" V 5550 3325 31  0001 C CNN "Part Number"
+F 7 "375mA" V 5700 3300 31  0001 C CNN "Rated Current"
+F 8 "63V" V 5700 3300 31  0001 C CNN "Rated Voltage DC"
+F 9 "480mOhms" V 5700 3300 31  0001 C CNN "Resistance"
+F 10 "Fast Blow" V 5700 3300 31  0001 C CNN "Fuse type"
+	1    5700 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L Power_Protection:PESD3V3L4UF D?
+U 1 1 60C1C49A
+P 5900 3500
+AR Path="/60C0DB51/60C1C49A" Ref="D?"  Part="1" 
+AR Path="/60C6954B/60C1C49A" Ref="D402"  Part="1" 
+F 0 "D402" V 5875 3625 31  0000 C CNN
+F 1 "22V" V 5925 3650 31  0000 C CNN
+F 2 "Diode_SMD:D_SMA" H 5900 3500 31  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/PESDXL4UF_G_W.pdf" H 5900 3500 31  0001 C CNN
+F 4 "Wurth Elektronik" H 5900 3500 31  0001 C CNN "Manufacturer"
+F 5 "DO-214AC-2 (SMA)" H 5900 3500 31  0001 C CNN "Package"
+F 6 "824501221" H 5900 3500 31  0001 C CNN "Part Number"
+F 7 "TVS Diodes " V 5900 3500 31  0001 C CNN "Product Type"
+F 8 "Bidirectional" V 5900 3500 31  0001 C CNN "Polarization"
+F 9 "22V" V 5900 3500 31  0001 C CNN "Working Voltage"
+F 10 "25.65V" V 5900 3500 31  0001 C CNN "Breakdown Voltage"
+F 11 "35.5V" V 5900 3500 31  0001 C CNN "Stabilization Voltage"
+F 12 "400W" V 5900 3500 31  0001 C CNN "Peak pulse power"
+	1    5900 3500
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60C1C4A0
+P 5900 3700
+AR Path="/60C0DB51/60C1C4A0" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60C1C4A0" Ref="#PWR0107"  Part="1" 
+F 0 "#PWR0107" H 5900 3450 50  0001 C CNN
+F 1 "GND" H 5825 3600 28  0000 C CNN
+F 2 "" H 5900 3700 50  0001 C CNN
+F 3 "" H 5900 3700 50  0001 C CNN
+	1    5900 3700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:D D?
+U 1 1 60C1C4A6
+P 6100 3300
+AR Path="/60C0DB51/60C1C4A6" Ref="D?"  Part="1" 
+AR Path="/60C6954B/60C1C4A6" Ref="D401"  Part="1" 
+F 0 "D401" H 6050 3400 31  0000 L CNN
+F 1 "350mV" H 6000 3200 31  0000 L CNN
+F 2 "" H 6100 3300 31  0001 C CNN
+F 3 "~" H 6100 3300 31  0001 C CNN
+F 4 "Schottky Diodes" H 6100 3300 31  0001 C CNN "Product Type"
+F 5 "Single" H 6100 3300 31  0001 C CNN "Configuration"
+F 6 "ROHM Semiconductor" H 6100 3300 31  0001 C CNN "Manufacturer"
+F 7 "SOD-323HE-2" H 6100 3300 31  0001 C CNN "Package"
+F 8 "RSX051VAM30TR " H 6100 3300 31  0001 C CNN "Part Number"
+F 9 "500mA" H 6100 3300 31  0001 C CNN "Forward Current"
+F 10 "30V" H 6100 3300 31  0001 C CNN "Repetition Reverse Voltage"
+F 11 "350mV" H 6100 3300 31  0001 C CNN "Forward Voltage"
+F 12 "5A" H 6100 3300 31  0001 C CNN "Forward Surge Current"
+F 13 "40uA" H 6100 3300 31  0001 C CNN "Reverse Current"
+F 14 "30V" H 6100 3300 31  0001 C CNN "Reverse Voltage"
+	1    6100 3300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60C299EA
+P 5450 4950
+AR Path="/60C0DB51/60C299EA" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60C299EA" Ref="#PWR0108"  Part="1" 
+F 0 "#PWR0108" H 5450 4700 50  0001 C CNN
+F 1 "GND" H 5375 4850 28  0000 C CNN
+F 2 "" H 5450 4950 50  0001 C CNN
+F 3 "" H 5450 4950 50  0001 C CNN
+	1    5450 4950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 60C2D0D2
+P 5250 3500
+AR Path="/60ABCC10/60C2D0D2" Ref="C?"  Part="1" 
+AR Path="/60C6954B/60C2D0D2" Ref="C401"  Part="1" 
+F 0 "C401" H 5025 3550 31  0000 L CNN
+F 1 "22u" H 5025 3500 31  0000 L CNN
+F 2 "" H 5288 3350 31  0001 C CNN
+F 3 "~" H 5250 3500 31  0001 C CNN
+F 4 "50V" H 5250 3500 31  0001 C CNN "Voltage"
+F 5 "20%" H 5075 3450 31  0000 C CNN "Tolerance"
+F 6 "KEMET" H 5500 3450 31  0001 C CNN "Manufacturer"
+F 7 "A768EB226M1HLAE048" H 5750 3400 50  0001 C CNN "Part Number"
+F 8 "48mR" H 5250 3500 50  0001 C CNN "ESR"
+	1    5250 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60C2D40E
+P 5250 3700
+AR Path="/60C0DB51/60C2D40E" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60C2D40E" Ref="#PWR0109"  Part="1" 
+F 0 "#PWR0109" H 5250 3450 50  0001 C CNN
+F 1 "GND" H 5175 3600 28  0000 C CNN
+F 2 "" H 5250 3700 50  0001 C CNN
+F 3 "" H 5250 3700 50  0001 C CNN
+	1    5250 3700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 60C430BB
+P 5800 4750
+AR Path="/60ABCC10/60C430BB" Ref="C?"  Part="1" 
+AR Path="/60C6954B/60C430BB" Ref="C402"  Part="1" 
+F 0 "C402" H 5575 4700 31  0000 L CNN
+F 1 "100n" H 5575 4750 31  0000 L CNN
+F 2 "" H 5838 4600 31  0001 C CNN
+F 3 "~" H 5800 4750 31  0001 C CNN
+F 4 "Murata Electronics" H 5800 4750 31  0001 C CNN "Manufacturer"
+F 5 "GRM155C71H104JE19D " H 5800 4750 31  0001 C CNN "Mfg number"
+F 6 "0402" H 5575 4800 31  0000 L CNN "Package"
+F 7 "50 V" H 5575 4850 31  0000 L CNN "Voltage"
+F 8 "X7S" H 5800 4750 31  0001 C CNN "Izolation material"
+F 9 "5%" H 5800 4750 31  0001 C CNN "Tolerance"
+	1    5800 4750
+	1    0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60C43474
+P 5800 4950
+AR Path="/60C0DB51/60C43474" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60C43474" Ref="#PWR0110"  Part="1" 
+F 0 "#PWR0110" H 5800 4700 50  0001 C CNN
+F 1 "GND" H 5725 4850 28  0000 C CNN
+F 2 "" H 5800 4950 50  0001 C CNN
+F 3 "" H 5800 4950 50  0001 C CNN
+	1    5800 4950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60C486E0
+P 5450 4750
+AR Path="/60ABCC10/60C486E0" Ref="R?"  Part="1" 
+AR Path="/60C6954B/60C486E0" Ref="R403"  Part="1" 
+F 0 "R403" H 5225 4675 31  0000 L CNN
+F 1 "15k8" H 5225 4725 31  0000 L CNN
+F 2 "" V 5380 4750 31  0001 C CNN
+F 3 "~" H 5450 4750 31  0001 C CNN
+F 4 "Yageo " H 5450 4750 31  0001 C CNN "Manufacturer"
+F 5 "0402" H 5450 4750 31  0001 C CNN "Package"
+F 6 "RC0402FR-0715K8L" H 5450 4750 31  0001 C CNN "Part Number"
+F 7 "62.5mW" H 5225 4775 31  0000 L CNN "Nominal Power"
+F 8 "1%" H 5225 4825 31  0000 L CNN "Tolerance"
+F 9 "50V" H 5325 4825 31  0001 C CNN "Voltage"
+F 10 "Thick Film" H 5450 4750 31  0001 C CNN "Type"
+F 11 "100PPM/C" H 5450 4750 31  0001 C CNN "TempCo"
+	1    5450 4750
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60C39601
+P 6450 3300
+AR Path="/60ABCC10/60C39601" Ref="R?"  Part="1" 
+AR Path="/60C6954B/60C39601" Ref="R401"  Part="1" 
+F 0 "R401" V 6325 3275 31  0000 L CNN
+F 1 "340k" V 6375 3275 31  0000 L CNN
+F 2 "Diode_SMD:D_0805_2012Metric" V 6380 3300 31  0001 C CNN
+F 3 "~" H 6450 3300 31  0001 C CNN
+F 4 "Yageo " H 6450 3300 31  0001 C CNN "Manufacturer"
+F 5 "0402" H 6450 3300 31  0001 C CNN "Package"
+F 6 "RC0402FR-07340KL" H 6450 3300 31  0001 C CNN "Part Number"
+F 7 "62.5mW" V 6525 3200 31  0000 L CNN "Nominal Power"
+F 8 "1%" V 6575 3325 31  0000 L CNN "Tolerance"
+F 9 "50V" H 6325 3375 31  0001 C CNN "Voltage"
+F 10 "Thick Film" H 6450 3300 31  0001 C CNN "Type"
+F 11 "100PPM/C" H 6450 3300 31  0001 C CNN "TempCo"
+	1    6450 3300
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 60CE0919
+P 4875 3250
+AR Path="/60ABCC10/60CE0919" Ref="#FLG?"  Part="1" 
+AR Path="/60C6954B/60CE0919" Ref="#FLG0104"  Part="1" 
+F 0 "#FLG0104" H 4875 3325 50  0001 C CNN
+F 1 "PWR_FLAG" H 5025 3350 28  0000 C CNN
+F 2 "" H 4875 3250 50  0001 C CNN
+F 3 "~" H 4875 3250 50  0001 C CNN
+	1    4875 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 60CEC3E8
+P 6625 3250
+AR Path="/60ABCC10/60CEC3E8" Ref="#FLG?"  Part="1" 
+AR Path="/60C6954B/60CEC3E8" Ref="#FLG0105"  Part="1" 
+F 0 "#FLG0105" H 6625 3325 50  0001 C CNN
+F 1 "PWR_FLAG" H 6775 3350 28  0000 C CNN
+F 2 "" H 6625 3250 50  0001 C CNN
+F 3 "~" H 6625 3250 50  0001 C CNN
+	1    6625 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6625 3300 6925 3300
+$Comp
+L Device:R R?
+U 1 1 60C4747D
+P 5450 4350
+AR Path="/60ABCC10/60C4747D" Ref="R?"  Part="1" 
+AR Path="/60C6954B/60C4747D" Ref="R402"  Part="1" 
+F 0 "R402" H 5225 4275 31  0000 L CNN
+F 1 "71k5" H 5225 4325 31  0000 L CNN
+F 2 "" V 5380 4350 31  0001 C CNN
+F 3 "~" H 5450 4350 31  0001 C CNN
+F 4 "Yageo " H 5450 4350 31  0001 C CNN "Manufacturer"
+F 5 "0402" H 5450 4350 31  0001 C CNN "Package"
+F 6 "RC0402FR-0771K5L" H 5450 4350 31  0001 C CNN "Part Number"
+F 7 "62.5mW" H 5225 4375 31  0000 L CNN "Nominal Power"
+F 8 "1%" H 5225 4425 31  0000 L CNN "Tolerance"
+F 9 "50V" H 5325 4425 31  0001 C CNN "Voltage"
+F 10 "Thick Film" H 5450 4350 31  0001 C CNN "Type"
+F 11 "100PPM/C" H 5450 4350 31  0001 C CNN "TempCo"
+	1    5450 4350
+	1    0    0    1   
+$EndComp
+$Comp
+L power:+12P #PWR?
+U 1 1 61345F49
+P 6925 3250
+F 0 "#PWR?" H 6925 3100 50  0001 C CNN
+F 1 "+12P" H 7050 3350 50  0000 C CNN
+F 2 "" H 6925 3250 50  0001 C CNN
+F 3 "" H 6925 3250 50  0001 C CNN
+	1    6925 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6925 3250 6925 3300
+$EndSCHEMATC

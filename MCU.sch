@@ -1,0 +1,845 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 6
+Title "FZ6N_GATEWAY"
+Date "2021-05-28"
+Rev "A0"
+Comp "Quasi Peak"
+Comment1 "PRZ"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 2975 5350 0    39   Input ~ 0
+VOUT
+Text HLabel 2975 5450 0    39   Input ~ 0
+PGOOD
+$Comp
+L FZ6N_GATEWAY-rescue:STM32L031K6U3TR-FZ6N_GATEWAY U301
+U 1 1 60BD9035
+P 6100 4350
+AR Path="/60BD9035" Ref="U301"  Part="1" 
+AR Path="/60B3EE27/60BD9035" Ref="U301"  Part="1" 
+F 0 "U301" H 5600 5325 28  0000 C CNN
+F 1 "STM32L031K6U3TR" H 6425 3375 28  0000 C CNN
+F 2 "FZ6N_GATEWAY:STM32L031K6U3TR_UFQFPN32" H 5725 4200 50  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/389/dm00140359-1798360.pdf" H 5725 4200 50  0001 C CNN
+	1    6100 4350
+	1    0    0    -1  
+$EndComp
+Text Notes 3500 900  0    157  ~ 31
+MICROCONTROLLER, OLED DISPLAY, SENSORS
+Wire Notes Line width 16 style solid rgb(0, 72, 0)
+	500  1000 11200 1000
+Text Notes 7300 2350 0    79   ~ 0
+Add reset circuit\nAdd decoupling capacitors\nAdd ferrite bead for filtering\nAdd pullup resistors for I2C and calculate them\nUse hierarchical labels\nAdd section name for each circuit\nTry to use bus in this schematic sheet\n\n
+Text Notes 7250 1300 0    157  ~ 31
+TODO List
+Text HLabel 2725 5800 0    50   Input ~ 0
+ISO_TX
+Text HLabel 2725 5900 0    50   Output ~ 0
+ISO_RX
+Text HLabel 2400 6500 0    39   Input ~ 0
+ISO_CEN
+$Comp
+L Connector_Generic:Conn_01x04 J301
+U 1 1 60D0F196
+P 10350 3550
+F 0 "J301" H 10700 3550 50  0000 C CNN
+F 1 "Conn_01x04" H 10700 3450 50  0000 C CNN
+F 2 "" H 10350 3550 50  0001 C CNN
+F 3 "~" H 10350 3550 50  0001 C CNN
+	1    10350 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10150 3750 10100 3750
+Wire Wire Line
+	10100 3750 10100 4050
+Wire Wire Line
+	10150 3450 10100 3450
+Wire Wire Line
+	10100 3450 10100 3150
+Text Label 8950 3550 0    39   ~ 0
+SSD1306_SCL
+Text Label 8950 3650 0    39   ~ 0
+SSD1306_SDA
+Wire Wire Line
+	8950 3550 9500 3550
+Wire Wire Line
+	8950 3650 9850 3650
+$Comp
+L Device:C C?
+U 1 1 60D1A37C
+P 9550 3850
+AR Path="/60ABCC10/60D1A37C" Ref="C?"  Part="1" 
+AR Path="/60B3EE27/60D1A37C" Ref="C306"  Part="1" 
+F 0 "C306" H 9325 3800 31  0000 L CNN
+F 1 "47p" H 9325 3850 31  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 9588 3700 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/445/885012005029-1727084.pdf" H 9550 3850 31  0001 C CNN
+F 4 "Wurth Elektronik" H 9550 3850 31  0001 C CNN "Manufacturer"
+F 5 "885012005029 " H 9550 3850 31  0001 C CNN "Mfg number"
+F 6 "0402" H 9325 3900 31  0000 L CNN "Package"
+F 7 "16 V" H 9325 3950 31  0000 L CNN "Voltage"
+F 8 "C0G" H 9550 3850 31  0001 C CNN "Izolation material"
+F 9 "5%" H 9550 3850 31  0001 C CNN "Tolerance"
+	1    9550 3850
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	9500 3500 9500 3550
+Connection ~ 9500 3550
+Wire Wire Line
+	9500 3550 9550 3550
+Wire Wire Line
+	9550 3700 9550 3550
+Connection ~ 9550 3550
+Wire Wire Line
+	9550 3550 10150 3550
+Wire Wire Line
+	9900 3700 9900 3650
+Connection ~ 9900 3650
+Wire Wire Line
+	9900 3650 10150 3650
+Connection ~ 9850 3650
+Wire Wire Line
+	9850 3650 9900 3650
+Wire Wire Line
+	9900 4050 9900 4000
+Wire Wire Line
+	9550 4050 9550 4000
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60D20290
+P 9500 3150
+AR Path="/60ABCC10/60D20290" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D20290" Ref="#PWR0102"  Part="1" 
+F 0 "#PWR0102" H 9500 3000 50  0001 C CNN
+F 1 "+3.3V" H 9575 3250 28  0000 C CNN
+F 2 "" H 9500 3150 50  0001 C CNN
+F 3 "" H 9500 3150 50  0001 C CNN
+	1    9500 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9850 3150 9850 3200
+Wire Wire Line
+	9500 3150 9500 3200
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60D21420
+P 9850 3150
+AR Path="/60ABCC10/60D21420" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D21420" Ref="#PWR0111"  Part="1" 
+F 0 "#PWR0111" H 9850 3000 50  0001 C CNN
+F 1 "+3.3V" H 9925 3250 28  0000 C CNN
+F 2 "" H 9850 3150 50  0001 C CNN
+F 3 "" H 9850 3150 50  0001 C CNN
+	1    9850 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60D217E8
+P 10100 3150
+AR Path="/60ABCC10/60D217E8" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D217E8" Ref="#PWR0112"  Part="1" 
+F 0 "#PWR0112" H 10100 3000 50  0001 C CNN
+F 1 "+3.3V" H 10175 3250 28  0000 C CNN
+F 2 "" H 10100 3150 50  0001 C CNN
+F 3 "" H 10100 3150 50  0001 C CNN
+	1    10100 3150
+	1    0    0    -1  
+$EndComp
+Text Notes 8950 2800 0    118  ~ 24
+Oled display
+Wire Notes Line width 20
+	8500 2500 8500 4500
+Wire Notes Line width 20
+	8500 4500 11100 4500
+Wire Notes Line width 20
+	11100 4500 11100 2500
+Wire Notes Line width 20
+	11100 2500 8500 2500
+$Comp
+L Device:C C?
+U 1 1 60D33ED4
+P 925 2050
+AR Path="/60ABCC10/60D33ED4" Ref="C?"  Part="1" 
+AR Path="/60B3EE27/60D33ED4" Ref="C301"  Part="1" 
+F 0 "C301" H 700 2000 31  0000 L CNN
+F 1 "1u" H 700 2050 31  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 963 1900 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/212/KEM_C1002_X7R_SMD-1102033.pdf" H 925 2050 31  0001 C CNN
+F 4 "KEMET" H 925 2050 31  0001 C CNN "Manufacturer"
+F 5 "C0603C105K4RACTU " H 925 2050 31  0001 C CNN "Mfg number"
+F 6 "0603" H 700 2100 31  0000 L CNN "Package"
+F 7 "16 V" H 700 2150 31  0000 L CNN "Voltage"
+F 8 "X7R" H 925 2050 31  0001 C CNN "Izolation material"
+F 9 "10 %" H 925 2050 31  0001 C CNN "Tolerance"
+	1    925  2050
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 60D379CB
+P 1350 2925
+AR Path="/60ABCC10/60D379CB" Ref="C?"  Part="1" 
+AR Path="/60B3EE27/60D379CB" Ref="C304"  Part="1" 
+F 0 "C304" H 1125 2875 31  0000 L CNN
+F 1 "1u" H 1125 2925 31  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1388 2775 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/212/KEM_C1002_X7R_SMD-1102033.pdf" H 1350 2925 31  0001 C CNN
+F 4 "KEMET" H 1350 2925 31  0001 C CNN "Manufacturer"
+F 5 "C0603C105K4RACTU " H 1350 2925 31  0001 C CNN "Mfg number"
+F 6 "0603" H 1125 2975 31  0000 L CNN "Package"
+F 7 "16 V" H 1125 3025 31  0000 L CNN "Voltage"
+F 8 "X7R" H 1350 2925 31  0001 C CNN "Izolation material"
+F 9 "10 %" H 1350 2925 31  0001 C CNN "Tolerance"
+	1    1350 2925
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 60D3A636
+P 1275 2050
+AR Path="/60ABCC10/60D3A636" Ref="C?"  Part="1" 
+AR Path="/60B3EE27/60D3A636" Ref="C302"  Part="1" 
+F 0 "C302" H 1050 2100 31  0000 L CNN
+F 1 "100n" H 1050 2050 31  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1313 1900 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/281/1/GRM155C71H104JE19_01A-1983567.pdf" H 1275 2050 31  0001 C CNN
+F 4 "Murata Electronics" H 1275 2050 31  0001 C CNN "Manufacturer"
+F 5 "GRM155C71H104JE19D " H 1275 2050 31  0001 C CNN "Mfg number"
+F 6 "0402" H 1050 2000 31  0000 L CNN "Package"
+F 7 "50 V" H 1050 1950 31  0000 L CNN "Voltage"
+F 8 "X7S" H 1275 2050 31  0001 C CNN "Izolation material"
+F 9 "5%" H 1275 2050 31  0001 C CNN "Tolerance"
+	1    1275 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 60D3C2DE
+P 1625 2050
+AR Path="/60ABCC10/60D3C2DE" Ref="C?"  Part="1" 
+AR Path="/60B3EE27/60D3C2DE" Ref="C303"  Part="1" 
+F 0 "C303" H 1400 2100 31  0000 L CNN
+F 1 "100n" H 1400 2050 31  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1663 1900 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/281/1/GRM155C71H104JE19_01A-1983567.pdf" H 1625 2050 31  0001 C CNN
+F 4 "Murata Electronics" H 1625 2050 31  0001 C CNN "Manufacturer"
+F 5 "GRM155C71H104JE19D " H 1625 2050 31  0001 C CNN "Mfg number"
+F 6 "0402" H 1400 2000 31  0000 L CNN "Package"
+F 7 "50 V" H 1400 1950 31  0000 L CNN "Voltage"
+F 8 "X7S" H 1625 2050 31  0001 C CNN "Izolation material"
+F 9 "5%" H 1625 2050 31  0001 C CNN "Tolerance"
+	1    1625 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 60D3C964
+P 1700 2925
+AR Path="/60ABCC10/60D3C964" Ref="C?"  Part="1" 
+AR Path="/60B3EE27/60D3C964" Ref="C305"  Part="1" 
+F 0 "C305" H 1475 2975 31  0000 L CNN
+F 1 "100n" H 1475 2925 31  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1738 2775 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/281/1/GRM155C71H104JE19_01A-1983567.pdf" H 1700 2925 31  0001 C CNN
+F 4 "Murata Electronics" H 1700 2925 31  0001 C CNN "Manufacturer"
+F 5 "GRM155C71H104JE19D " H 1700 2925 31  0001 C CNN "Mfg number"
+F 6 "0402" H 1475 2875 31  0000 L CNN "Package"
+F 7 "50 V" H 1475 2825 31  0000 L CNN "Voltage"
+F 8 "X7S" H 1700 2925 31  0001 C CNN "Izolation material"
+F 9 "5%" H 1700 2925 31  0001 C CNN "Tolerance"
+	1    1700 2925
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6775 5250 6775 5200
+Wire Wire Line
+	6775 5200 6725 5200
+Wire Wire Line
+	925  2250 925  2200
+Wire Wire Line
+	1275 2250 1275 2200
+Wire Wire Line
+	1625 2250 1625 2200
+Wire Wire Line
+	925  1850 925  1900
+Wire Wire Line
+	925  1850 1275 1850
+Wire Wire Line
+	1275 1850 1275 1900
+Connection ~ 925  1850
+Wire Wire Line
+	1275 1850 1625 1850
+Wire Wire Line
+	1625 1850 1625 1900
+Connection ~ 1275 1850
+Wire Wire Line
+	1350 2725 1350 2775
+Wire Wire Line
+	1350 2725 1700 2725
+Wire Wire Line
+	1700 2725 1700 2775
+Connection ~ 1350 2725
+Wire Wire Line
+	1350 3075 1350 3125
+Wire Wire Line
+	1700 3075 1700 3125
+Wire Wire Line
+	725  2725 725  2675
+Wire Wire Line
+	725  1850 725  1800
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60D4CB69
+P 725 1800
+AR Path="/60ABCC10/60D4CB69" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D4CB69" Ref="#PWR0113"  Part="1" 
+F 0 "#PWR0113" H 725 1650 50  0001 C CNN
+F 1 "+3.3V" H 800 1900 28  0000 C CNN
+F 2 "" H 725 1800 50  0001 C CNN
+F 3 "" H 725 1800 50  0001 C CNN
+	1    725  1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60D4E204
+P 725 2675
+AR Path="/60ABCC10/60D4E204" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D4E204" Ref="#PWR0114"  Part="1" 
+F 0 "#PWR0114" H 725 2525 50  0001 C CNN
+F 1 "+3.3V" H 800 2775 28  0000 C CNN
+F 2 "" H 725 2675 50  0001 C CNN
+F 3 "" H 725 2675 50  0001 C CNN
+	1    725  2675
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60D4FABB
+P 6775 5250
+AR Path="/60C0DB51/60D4FABB" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60D4FABB" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D4FABB" Ref="#PWR0115"  Part="1" 
+F 0 "#PWR0115" H 6775 5000 50  0001 C CNN
+F 1 "GND" H 6700 5150 28  0000 C CNN
+F 2 "" H 6775 5250 50  0001 C CNN
+F 3 "" H 6775 5250 50  0001 C CNN
+	1    6775 5250
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60D50FBA
+P 925 2250
+AR Path="/60C0DB51/60D50FBA" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60D50FBA" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D50FBA" Ref="#PWR0116"  Part="1" 
+F 0 "#PWR0116" H 925 2000 50  0001 C CNN
+F 1 "GND" H 850 2150 28  0000 C CNN
+F 2 "" H 925 2250 50  0001 C CNN
+F 3 "" H 925 2250 50  0001 C CNN
+	1    925  2250
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60D51124
+P 1275 2250
+AR Path="/60C0DB51/60D51124" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60D51124" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D51124" Ref="#PWR0117"  Part="1" 
+F 0 "#PWR0117" H 1275 2000 50  0001 C CNN
+F 1 "GND" H 1200 2150 28  0000 C CNN
+F 2 "" H 1275 2250 50  0001 C CNN
+F 3 "" H 1275 2250 50  0001 C CNN
+	1    1275 2250
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60D512B3
+P 1625 2250
+AR Path="/60C0DB51/60D512B3" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60D512B3" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D512B3" Ref="#PWR0118"  Part="1" 
+F 0 "#PWR0118" H 1625 2000 50  0001 C CNN
+F 1 "GND" H 1550 2150 28  0000 C CNN
+F 2 "" H 1625 2250 50  0001 C CNN
+F 3 "" H 1625 2250 50  0001 C CNN
+	1    1625 2250
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60D52AC8
+P 1700 3125
+AR Path="/60C0DB51/60D52AC8" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60D52AC8" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D52AC8" Ref="#PWR0119"  Part="1" 
+F 0 "#PWR0119" H 1700 2875 50  0001 C CNN
+F 1 "GND" H 1625 3025 28  0000 C CNN
+F 2 "" H 1700 3125 50  0001 C CNN
+F 3 "" H 1700 3125 50  0001 C CNN
+	1    1700 3125
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60D537EA
+P 1350 3125
+AR Path="/60C0DB51/60D537EA" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60D537EA" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D537EA" Ref="#PWR0120"  Part="1" 
+F 0 "#PWR0120" H 1350 2875 50  0001 C CNN
+F 1 "GND" H 1275 3025 28  0000 C CNN
+F 2 "" H 1350 3125 50  0001 C CNN
+F 3 "" H 1350 3125 50  0001 C CNN
+	1    1350 3125
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60D56F99
+P 9550 4050
+AR Path="/60C0DB51/60D56F99" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60D56F99" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D56F99" Ref="#PWR0121"  Part="1" 
+F 0 "#PWR0121" H 9550 3800 50  0001 C CNN
+F 1 "GND" H 9475 3950 28  0000 C CNN
+F 2 "" H 9550 4050 50  0001 C CNN
+F 3 "" H 9550 4050 50  0001 C CNN
+	1    9550 4050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60D58765
+P 9900 4050
+AR Path="/60C0DB51/60D58765" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60D58765" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D58765" Ref="#PWR0122"  Part="1" 
+F 0 "#PWR0122" H 9900 3800 50  0001 C CNN
+F 1 "GND" H 9825 3950 28  0000 C CNN
+F 2 "" H 9900 4050 50  0001 C CNN
+F 3 "" H 9900 4050 50  0001 C CNN
+	1    9900 4050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60D58918
+P 10100 4050
+AR Path="/60C0DB51/60D58918" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60D58918" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60D58918" Ref="#PWR0123"  Part="1" 
+F 0 "#PWR0123" H 10100 3800 50  0001 C CNN
+F 1 "GND" H 10025 3950 28  0000 C CNN
+F 2 "" H 10100 4050 50  0001 C CNN
+F 3 "" H 10100 4050 50  0001 C CNN
+	1    10100 4050
+	-1   0    0    -1  
+$EndComp
+Text Notes 725  1500 0    118  ~ 24
+Decoupling capacitors
+Wire Wire Line
+	9850 3500 9850 3650
+$Comp
+L Device:R R?
+U 1 1 60D16DEF
+P 9500 3350
+AR Path="/60ABCC10/60D16DEF" Ref="R?"  Part="1" 
+AR Path="/60B3EE27/60D16DEF" Ref="R301"  Part="1" 
+F 0 "R301" H 9275 3275 31  0000 L CNN
+F 1 "4k7" H 9275 3325 31  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 9430 3350 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/447/PYu_RC_Group_51_RoHS_L_10-1664068.pdf" H 9500 3350 31  0001 C CNN
+F 4 "Yageo " H 9500 3350 31  0001 C CNN "Manufacturer"
+F 5 "0402" H 9500 3350 31  0001 C CNN "Package"
+F 6 "RC0402FR-104K7L" H 9500 3350 31  0001 C CNN "Part Number"
+F 7 "62.5mW" H 9275 3375 31  0000 L CNN "Nominal Power"
+F 8 "1%" H 9275 3425 31  0000 L CNN "Tolerance"
+F 9 "50V" H 9375 3425 31  0001 C CNN "Voltage"
+F 10 "Thick Film" H 9500 3350 31  0001 C CNN "Type"
+F 11 "100PPM/C" H 9500 3350 31  0001 C CNN "TempCo"
+	1    9500 3350
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60D68117
+P 9850 3350
+AR Path="/60ABCC10/60D68117" Ref="R?"  Part="1" 
+AR Path="/60B3EE27/60D68117" Ref="R302"  Part="1" 
+F 0 "R302" H 9625 3275 31  0000 L CNN
+F 1 "4k7" H 9625 3325 31  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 9780 3350 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/447/PYu_RC_Group_51_RoHS_L_10-1664068.pdf" H 9850 3350 31  0001 C CNN
+F 4 "Yageo " H 9850 3350 31  0001 C CNN "Manufacturer"
+F 5 "0402" H 9850 3350 31  0001 C CNN "Package"
+F 6 "RC0402FR-104K7L" H 9850 3350 31  0001 C CNN "Part Number"
+F 7 "62.5mW" H 9625 3375 31  0000 L CNN "Nominal Power"
+F 8 "1%" H 9625 3425 31  0000 L CNN "Tolerance"
+F 9 "50V" H 9725 3425 31  0001 C CNN "Voltage"
+F 10 "Thick Film" H 9850 3350 31  0001 C CNN "Type"
+F 11 "100PPM/C" H 9850 3350 31  0001 C CNN "TempCo"
+	1    9850 3350
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 60D69BDF
+P 9900 3850
+AR Path="/60ABCC10/60D69BDF" Ref="C?"  Part="1" 
+AR Path="/60B3EE27/60D69BDF" Ref="C307"  Part="1" 
+F 0 "C307" H 9675 3800 31  0000 L CNN
+F 1 "47p" H 9675 3850 31  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 9938 3700 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/445/885012005029-1727084.pdf" H 9900 3850 31  0001 C CNN
+F 4 "Wurth Elektronik" H 9900 3850 31  0001 C CNN "Manufacturer"
+F 5 "885012005029 " H 9900 3850 31  0001 C CNN "Mfg number"
+F 6 "0402" H 9675 3900 31  0000 L CNN "Package"
+F 7 "16 V" H 9675 3950 31  0000 L CNN "Voltage"
+F 8 "C0G" H 9900 3850 31  0001 C CNN "Izolation material"
+F 9 "5%" H 9900 3850 31  0001 C CNN "Tolerance"
+	1    9900 3850
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:Ferrite_Bead_Small FB302
+U 1 1 60D80832
+P 975 2725
+F 0 "FB302" V 900 2675 31  0000 C CNN
+F 1 "Ferrite_Bead" V 775 2725 31  0001 C CNN
+F 2 "Inductor_SMD:L_0402_1005Metric" V 905 2725 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/281/QNFA9118-1915745.pdf" H 975 2725 31  0001 C CNN
+F 4 "Murata Electronics" H 975 2725 31  0001 C CNN "Manufacturer"
+F 5 "0402" V 900 2850 31  0000 C CNN "Package"
+F 6 "BLM15BD601SZ1D" V 975 2725 31  0001 C CNN "Part Number"
+F 7 "600R" V 1075 2725 31  0000 C CNN "Impedance"
+F 8 "200mA" V 975 2725 31  0001 C CNN "Max DC Current"
+F 9 "25%" V 975 2725 31  0001 C CNN "Tolerance"
+F 10 "650mR" V 975 2725 31  0001 C CNN "Max DC Resistance"
+F 11 "100MHz" V 1175 2725 31  0000 C CNN "Frequency"
+	1    975  2725
+	0    1    1    0   
+$EndComp
+Text Notes 950  2900 0    39   ~ 0
+@
+Wire Wire Line
+	1625 1850 1725 1850
+Wire Wire Line
+	1725 1850 1725 1800
+Connection ~ 1625 1850
+Wire Wire Line
+	1700 2725 1800 2725
+Wire Wire Line
+	1800 2725 1800 2675
+$Comp
+L power:VDD #PWR0124
+U 1 1 60EE3F6E
+P 1725 1800
+F 0 "#PWR0124" H 1725 1650 50  0001 C CNN
+F 1 "VDD" H 1775 1900 28  0000 C CNN
+F 2 "" H 1725 1800 50  0001 C CNN
+F 3 "" H 1725 1800 50  0001 C CNN
+	1    1725 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDDA #PWR0125
+U 1 1 60EE5948
+P 1800 2675
+F 0 "#PWR0125" H 1800 2525 50  0001 C CNN
+F 1 "VDDA" H 1875 2775 28  0000 C CNN
+F 2 "" H 1800 2675 50  0001 C CNN
+F 3 "" H 1800 2675 50  0001 C CNN
+	1    1800 2675
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDDA #PWR0126
+U 1 1 60EE61EC
+P 5175 3400
+F 0 "#PWR0126" H 5175 3250 50  0001 C CNN
+F 1 "VDDA" H 5250 3500 28  0000 C CNN
+F 2 "" H 5175 3400 50  0001 C CNN
+F 3 "" H 5175 3400 50  0001 C CNN
+	1    5175 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR0127
+U 1 1 60EE718A
+P 5375 3400
+F 0 "#PWR0127" H 5375 3250 50  0001 C CNN
+F 1 "VDD" H 5425 3500 28  0000 C CNN
+F 2 "" H 5375 3400 50  0001 C CNN
+F 3 "" H 5375 3400 50  0001 C CNN
+	1    5375 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5375 3400 5375 3500
+Wire Wire Line
+	5375 3500 5475 3500
+Wire Wire Line
+	5475 3600 5375 3600
+Wire Wire Line
+	5375 3500 5375 3600
+Connection ~ 5375 3500
+Wire Wire Line
+	5475 3700 5175 3700
+Wire Wire Line
+	5175 3400 5175 3700
+$Comp
+L power:VDD #PWR0128
+U 1 1 60EF9B95
+P 1500 4150
+F 0 "#PWR0128" H 1500 4000 50  0001 C CNN
+F 1 "VDD" H 1550 4250 28  0000 C CNN
+F 2 "" H 1500 4150 50  0001 C CNN
+F 3 "" H 1500 4150 50  0001 C CNN
+	1    1500 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60EFA489
+P 1500 4950
+AR Path="/60C0DB51/60EFA489" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60EFA489" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60EFA489" Ref="#PWR0129"  Part="1" 
+F 0 "#PWR0129" H 1500 4700 50  0001 C CNN
+F 1 "GND" H 1425 4850 28  0000 C CNN
+F 2 "" H 1500 4950 50  0001 C CNN
+F 3 "" H 1500 4950 50  0001 C CNN
+	1    1500 4950
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 4950 1500 4900
+Wire Wire Line
+	1500 4600 1500 4550
+Wire Wire Line
+	1500 4200 1500 4150
+Wire Wire Line
+	1500 4550 1825 4550
+Connection ~ 1500 4550
+Wire Wire Line
+	1500 4550 1500 4500
+$Comp
+L Device:C C?
+U 1 1 60EFECE1
+P 1500 4750
+AR Path="/60ABCC10/60EFECE1" Ref="C?"  Part="1" 
+AR Path="/60B3EE27/60EFECE1" Ref="C308"  Part="1" 
+F 0 "C308" H 1275 4800 31  0000 L CNN
+F 1 "100n" H 1275 4750 31  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1538 4600 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/281/1/GRM155C71H104JE19_01A-1983567.pdf" H 1500 4750 31  0001 C CNN
+F 4 "Murata Electronics" H 1500 4750 31  0001 C CNN "Manufacturer"
+F 5 "GRM155C71H104JE19D " H 1500 4750 31  0001 C CNN "Mfg number"
+F 6 "0402" H 1275 4700 31  0000 L CNN "Package"
+F 7 "50 V" H 1275 4650 31  0000 L CNN "Voltage"
+F 8 "X7S" H 1500 4750 31  0001 C CNN "Izolation material"
+F 9 "5%" H 1500 4750 31  0001 C CNN "Tolerance"
+	1    1500 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60F067EC
+P 1500 4350
+AR Path="/60ABCC10/60F067EC" Ref="R?"  Part="1" 
+AR Path="/60B3EE27/60F067EC" Ref="R303"  Part="1" 
+F 0 "R303" H 1275 4275 31  0000 L CNN
+F 1 "10k" H 1275 4325 31  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 1430 4350 31  0001 C CNN
+F 3 "https://pl.mouser.com/datasheet/2/447/PYu_RC_Group_51_RoHS_L_10-1664068.pdf" H 1500 4350 31  0001 C CNN
+F 4 "Yageo " H 1500 4350 31  0001 C CNN "Manufacturer"
+F 5 "0402" H 1500 4350 31  0001 C CNN "Package"
+F 6 "RC0402FR-0710KL" H 1500 4350 31  0001 C CNN "Part Number"
+F 7 "62.5mW" H 1275 4375 31  0000 L CNN "Nominal Power"
+F 8 "1%" H 1275 4425 31  0000 L CNN "Tolerance"
+F 9 "50V" H 1375 4425 31  0001 C CNN "Voltage"
+F 10 "Thick Film" H 1500 4350 31  0001 C CNN "Type"
+F 11 "100PPM/C" H 1500 4350 31  0001 C CNN "TempCo"
+	1    1500 4350
+	1    0    0    1   
+$EndComp
+$Comp
+L Jumper:SolderJumper_3_Bridged12 JP301
+U 1 1 60F0839E
+P 4675 4250
+F 0 "JP301" V 4750 4875 50  0001 C CNN
+F 1 "SolderJumper_3_Bridged12" V 4650 4875 50  0001 C CNN
+F 2 "" H 4675 4250 50  0001 C CNN
+F 3 "~" H 4675 4250 50  0001 C CNN
+	1    4675 4250
+	0    -1   -1   0   
+$EndComp
+Text Label 5175 4100 0    39   ~ 0
+RESET
+Wire Wire Line
+	4825 4250 5475 4250
+$Comp
+L power:VDD #PWR0130
+U 1 1 60F1754A
+P 4675 4000
+F 0 "#PWR0130" H 4675 3850 50  0001 C CNN
+F 1 "VDD" H 4725 4100 28  0000 C CNN
+F 2 "" H 4675 4000 50  0001 C CNN
+F 3 "" H 4675 4000 50  0001 C CNN
+	1    4675 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60F17FA9
+P 4675 4500
+AR Path="/60C0DB51/60F17FA9" Ref="#PWR?"  Part="1" 
+AR Path="/60C6954B/60F17FA9" Ref="#PWR?"  Part="1" 
+AR Path="/60B3EE27/60F17FA9" Ref="#PWR0131"  Part="1" 
+F 0 "#PWR0131" H 4675 4250 50  0001 C CNN
+F 1 "GND" H 4600 4400 28  0000 C CNN
+F 2 "" H 4675 4500 50  0001 C CNN
+F 3 "" H 4675 4500 50  0001 C CNN
+	1    4675 4500
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4675 4500 4675 4450
+Wire Wire Line
+	4675 4000 4675 4050
+NoConn ~ 5475 3850
+NoConn ~ 5475 3950
+Wire Wire Line
+	6725 3500 7100 3500
+Wire Wire Line
+	2725 5700 3050 5700
+Text Label 3050 5700 2    39   ~ 0
+VBAT_ADC
+Text Label 7100 3500 2    39   ~ 0
+VBAT_ADC
+Wire Wire Line
+	6725 4450 7100 4450
+Wire Wire Line
+	6725 4550 7100 4550
+Wire Wire Line
+	2725 5800 3050 5800
+Wire Wire Line
+	2725 5900 3050 5900
+Text Label 3050 5800 2    39   ~ 0
+ISO_TX
+Text Label 3050 5900 2    39   ~ 0
+ISO_RX
+Text HLabel 2725 5700 0    50   Output ~ 0
+VBAT_ADC
+Text Label 7100 4550 2    39   ~ 0
+ISO_TX
+Text Label 7100 4450 2    39   ~ 0
+ISO_RX
+Wire Wire Line
+	725  2725 875  2725
+Wire Wire Line
+	1075 2725 1350 2725
+Wire Wire Line
+	5025 5000 5475 5000
+Wire Wire Line
+	5025 5100 5475 5100
+Text Label 5025 5000 0    39   ~ 0
+SSD1306_SCL
+Text Label 5025 5100 0    39   ~ 0
+SSD1306_SDA
+$Comp
+L Connector:TestPoint TP?
+U 1 1 60FCCEC0
+P 7350 4825
+AR Path="/60ABCC10/60FCCEC0" Ref="TP?"  Part="1" 
+AR Path="/60B3EE27/60FCCEC0" Ref="TP?"  Part="1" 
+F 0 "TP?" H 7450 4975 28  0000 C CNN
+F 1 "TestPoint" H 7600 4875 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 7550 4825 50  0001 C CNN
+F 3 "~" H 7550 4825 50  0001 C CNN
+	1    7350 4825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7350 4850 7350 4825
+Wire Wire Line
+	6725 4850 7350 4850
+$Comp
+L Connector:TestPoint TP?
+U 1 1 60FCFE13
+P 7550 4825
+AR Path="/60ABCC10/60FCFE13" Ref="TP?"  Part="1" 
+AR Path="/60B3EE27/60FCFE13" Ref="TP?"  Part="1" 
+F 0 "TP?" H 7650 4975 28  0000 C CNN
+F 1 "TestPoint" H 7800 4875 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 7750 4825 50  0001 C CNN
+F 3 "~" H 7750 4825 50  0001 C CNN
+	1    7550 4825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 4950 7550 4825
+Wire Wire Line
+	6725 4950 7550 4950
+Text Label 6900 4850 0    39   ~ 0
+SWDIO
+Text Label 6900 4950 0    39   ~ 0
+SWCLK
+$Comp
+L Connector:TestPoint TP?
+U 1 1 60FD2835
+P 5125 4050
+AR Path="/60ABCC10/60FD2835" Ref="TP?"  Part="1" 
+AR Path="/60B3EE27/60FD2835" Ref="TP?"  Part="1" 
+F 0 "TP?" H 5225 4200 28  0000 C CNN
+F 1 "TestPoint" H 5375 4100 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 5325 4050 50  0001 C CNN
+F 3 "~" H 5325 4050 50  0001 C CNN
+	1    5125 4050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5125 4100 5125 4050
+Wire Wire Line
+	5125 4100 5475 4100
+Text Label 1825 4550 2    39   ~ 0
+RESET
+Wire Wire Line
+	725  1850 925  1850
+Text Label 3050 6800 2    39   ~ 0
+IC_BUTTON_1
+Text Label 3050 6700 2    39   ~ 0
+IC_BUTTON_2
+Text Label 3050 6600 2    39   ~ 0
+IC_BUTTON_3
+Wire Wire Line
+	3050 6800 2400 6800
+Wire Wire Line
+	3050 6700 2400 6700
+Wire Wire Line
+	3050 6600 2400 6600
+Text HLabel 2400 6800 0    39   Input ~ 0
+IC_BUTTON_1
+Text HLabel 2400 6700 0    39   Input ~ 0
+IC_BUTTON_2
+Text HLabel 2400 6600 0    39   Input ~ 0
+IC_BUTTON_3
+Wire Wire Line
+	3050 6500 2400 6500
+Text Label 3050 6500 2    39   ~ 0
+ISO_CEN
+$EndSCHEMATC

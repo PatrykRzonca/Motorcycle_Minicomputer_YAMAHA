@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name FZ6N_GATEWAY)(type KiCad)(uri ${KIPRJMOD}/FZ6N_GATEWAY.pretty)(options "")(descr ""))
+)
